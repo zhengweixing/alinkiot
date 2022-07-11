@@ -1,0 +1,158 @@
+{
+  "tags": [
+
+  ],
+  "definitions": {
+
+  },
+  "paths": {
+    "/table/dept/treeselect": {
+      "get": {
+        "permission": "system:dept:query",
+        "summary": "获取部门详情",
+        "description": "获取部门详情",
+        "extend": {
+          "table": "dept",
+          "action": "TREE"
+        },
+        "tags": [
+          "dept"
+        ],
+        "parameters": [
+        ],
+        "responses": {
+          "200": {
+            "description": "返回部门数据"
+          },
+          "404": {
+            "description": "object not found",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "500": {
+            "description": "Server Internal error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/tool/gen/schema/{table_id}": {
+      "get": {
+        "permission": "system:schema:query",
+        "summary": "获取表详细信息",
+        "description": "获取表详细信息",
+        "extend": {
+          "action": "SCHEMA"
+        },
+        "tags": [
+          "menu"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "table_id",
+            "type": "string",
+            "description": "table_id",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "根据权限获取菜单详情"
+          },
+          "404": {
+            "description": "object not found",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "500": {
+            "description": "Server Internal error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/table/menu/treeselect/{role_id}": {
+      "get": {
+        "permission": "system:menu:query",
+        "summary": "根据权限获取菜单详情",
+        "description": "根据权限获取菜单详情",
+        "extend": {
+          "table": "menu",
+          "action": "TREE"
+        },
+        "tags": [
+          "menu"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "role_id",
+            "type": "integer",
+            "description": "role_id",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "根据权限获取菜单详情"
+          },
+          "404": {
+            "description": "object not found",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "500": {
+            "description": "Server Internal error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    }
+  }
+}

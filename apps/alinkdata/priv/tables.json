@@ -1,0 +1,22 @@
+[
+  {
+    "tableName": "Device",
+    "fields": [
+      {
+        "name": "name",
+        "type": "string",
+        "desc": ""
+      },
+      {
+        "name": "status",
+        "type": "boolean",
+        "desc": ""
+      },
+      {
+        "name": "isEnable",
+        "type": "boolean",
+        "desc": ""
+      }
+    ]
+  }
+]
